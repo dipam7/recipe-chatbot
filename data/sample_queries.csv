@@ -1,4 +1,58 @@
 id,query
-1,Suggest a quick vegan breakfast recipe
-2,I have chicken and rice. what can I cook?
-3,Give me a dessert recipe with chocolate 
+1,Quick vegan breakfast under 10 minutes
+2,I have chicken breast, jasmine rice, and frozen broccoli - what's the easiest dinner?
+3,Chocolate dessert that doesn't require an oven
+4,Thai curry recipe for someone who's never cooked Thai food
+5,Gluten-free pasta alternative that actually tastes good
+6,I'm terrible at cooking but need to impress my date tomorrow
+7,Healthy lunch I can meal prep on Sunday for the whole week
+8,Something comforting when I'm sick and have no energy
+9,What can I make with just pantry staples? I haven't grocery shopped in weeks
+10,Easy Indian recipe that won't set off my smoke alarm
+11,Protein-rich snack for after my workout
+12,I burned water last time I cooked - give me something foolproof
+13,Mediterranean diet recipe with ingredients from a regular American grocery store
+14,Fancy-looking appetizer that's secretly simple
+15,What's a good substitute for eggs in baking? And show me a recipe using it
+16,I have 45 minutes and want to cook something that makes my apartment smell amazing
+17,Keto dinner that doesn't involve just meat and vegetables
+18,Something delicious I can make in my tiny dorm kitchen with just a microwave and mini fridge
+19,Mexican food that won't give me heartburn but still has flavor
+20,I want to cook fish but I'm scared of overcooking it - help
+21,Bread recipe for someone who's never worked with yeast
+22,What's the easiest way to use up a bunch of ripe bananas?
+23,Soup that tastes like it simmered all day but takes 30 minutes
+24,I need something impressive for a potluck but I'm broke
+25,Stir fry that doesn't turn into a soggy mess
+26,Breakfast that will keep me full until lunch without coffee crash
+27,How do I make restaurant-quality fried rice at home?
+28,Something with quinoa that doesn't taste like cardboard
+29,Easy fermented food recipe for gut health
+30,I want to learn knife skills - give me a recipe that teaches proper cutting techniques
+31,What’s an easy Italian pasta I can make after work?
+32,I only have 20 minutes—what’s a healthy dinner I can cook?
+33,How do I make gluten-free pancakes?
+34,What’s a low-effort meal for one?
+35,Beginner-friendly Indian curry recipe?
+36,Help! I need a kid-friendly vegetarian lunch
+37,I just bought tofu—what can I do with it?
+38,Any spicy Thai recipes with under 5 ingredients?
+39,Show me a no-bake dessert idea
+40,I want to impress a date with a simple dinner—ideas?
+41,Got eggs, spinach, and cheese—what now?
+42,Give me a meal prep plan for the week
+43,Can you suggest a Japanese recipe without fish?
+44,Need a soup recipe for cold weather
+45,I want to try cooking quinoa—what’s easy to start with?
+46,I don’t have an oven. Any good stovetop desserts?
+47,I need a post-workout meal with high protein
+48,Nothing fancy—what’s a good lazy Sunday brunch?
+49,What can I make with canned beans and frozen veggies?
+50,Make me a keto dinner in 30 minutes
+51,I’m bored of salads. Healthy alternatives?
+52,Recipe with minimal cleanup?
+53,Only microwave available—any meals I can try?
+54,I’ve never cooked before. Where should I start?
+55,I want something cozy and comforting
+56,Give me a fancy dish that’s secretly easy
+57,No idea what to cook. Help?
