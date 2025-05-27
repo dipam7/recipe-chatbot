@@ -8,15 +8,18 @@ load_dotenv()
 # Get MongoDB connection string from environment variable
 MONGODB_URI = os.getenv("MONGODB_URI")
 
-# Configure MongoDB client with explicit SSL settings
+# Configure MongoDB client with explicit SSL settings for cloud deployment
 client = MongoClient(
     MONGODB_URI,
     tls=True,
     tlsAllowInvalidCertificates=True,
     tlsAllowInvalidHostnames=True,
-    serverSelectionTimeoutMS=10000,
-    connectTimeoutMS=10000,
-    socketTimeoutMS=10000
+    tlsInsecure=True,
+    serverSelectionTimeoutMS=30000,
+    connectTimeoutMS=30000,
+    socketTimeoutMS=30000,
+    maxPoolSize=10,
+    retryWrites=True
 )
 
 db = client.get_database("recipe_chatbot")
