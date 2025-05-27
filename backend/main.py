@@ -14,7 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 from backend.utils import get_agent_response, MODEL_NAME  # noqa: WPS433 import from parent
-from backend.db import save_conversation, get_conversation, log_user_query, get_query_stats
+from backend.db import save_conversation, get_conversation  # , log_user_query, get_query_stats
 
 # -----------------------------------------------------------------------------
 # Application setup
@@ -57,11 +57,11 @@ class ChatResponse(BaseModel):
     messages: List[ChatMessage] = Field(..., description="The updated conversation history.")
 
 
-class StatsResponse(BaseModel):
-    """Schema for query statistics."""
-    total_queries: int
-    unique_users: int
-    daily_counts: List[Dict]
+# class StatsResponse(BaseModel):
+#     """Schema for query statistics."""
+#     total_queries: int
+#     unique_users: int
+#     daily_counts: List[Dict]
 
 
 # -----------------------------------------------------------------------------
@@ -118,18 +118,18 @@ async def chat_endpoint(
         save_conversation(user_id, updated_messages_dicts)
         
         # Log the query if we have both user query and assistant response
-        if latest_user_message and latest_assistant_message:
-            metadata = {
-                "conversation_length": len(updated_messages_dicts),
-                "timestamp": uuid.uuid4().hex[:8]  # Add a unique identifier for the interaction
-            }
-            log_user_query(
-                user_id=user_id,
-                query=latest_user_message["content"],
-                response=latest_assistant_message["content"],
-                model_name=MODEL_NAME,
-                metadata=metadata
-            )
+        # if latest_user_message and latest_assistant_message:
+        #     metadata = {
+        #         "conversation_length": len(updated_messages_dicts),
+        #         "timestamp": uuid.uuid4().hex[:8]  # Add a unique identifier for the interaction
+        #     }
+        #     log_user_query(
+        #         user_id=user_id,
+        #         query=latest_user_message["content"],
+        #         response=latest_assistant_message["content"],
+        #         model_name=MODEL_NAME,
+        #         metadata=metadata
+        #     )
             
     except Exception as exc:  # noqa: BLE001 broad; surface as HTTP 500
         # In production you would log the traceback here.
@@ -151,14 +151,14 @@ async def get_history(user_id: str) -> ChatResponse:
     return ChatResponse(messages=response_messages)
 
 
-@app.get("/admin/stats", response_model=StatsResponse)
-async def get_admin_stats(days: int = 7) -> StatsResponse:
-    """Get query statistics for admin dashboard.
-    
-    Public endpoint with no authentication required.
-    """
-    stats = get_query_stats(days)
-    return StatsResponse(**stats)
+# @app.get("/admin/stats", response_model=StatsResponse)
+# async def get_admin_stats(days: int = 7) -> StatsResponse:
+#     """Get query statistics for admin dashboard.
+#     
+#     Public endpoint with no authentication required.
+#     """
+#     stats = get_query_stats(days)
+#     return StatsResponse(**stats)
 
 
 @app.get("/", response_class=HTMLResponse)
