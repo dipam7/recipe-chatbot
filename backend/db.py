@@ -12,15 +12,14 @@ MONGODB_URI = os.getenv("MONGODB_URI")
 client = MongoClient(
     MONGODB_URI,
     tls=True,
-    tlsAllowInvalidCertificates=True,
-    tlsAllowInvalidHostnames=True,
-    tlsInsecure=True,
+    tlsAllowInvalidCertificates=True,  # keep this if you're okay accepting self-signed/invalid certs
     serverSelectionTimeoutMS=30000,
     connectTimeoutMS=30000,
     socketTimeoutMS=30000,
     maxPoolSize=10,
     retryWrites=True
 )
+
 
 db = client.get_database("recipe_chatbot")
 conversations = db.get_collection("conversations")
